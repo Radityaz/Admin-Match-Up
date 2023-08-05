@@ -27,7 +27,7 @@ Route::get('/statistik', function () {
 });
 
 Route::get('/pengguna', [UserController::class, 'index']);
-Route::delete('pengguna/{id}',[UserSparringController::class, 'destroy']);
+Route::delete('pengguna/{id}',[UserController::class, 'destroy']);
 
 // Route::get('/pengguna', function () {
 //     return view('home.pengguna.home', [
