@@ -46,6 +46,14 @@
         </tbody>
         
       </table>
+      {{-- <section class="no-data" >
+        @if($map->count() > 0)
+        <section class="white-space" ></section>   
+        @else
+        <div class="flag-icon" ></div>
+        <p style="opacity: 50%;">Tidak ada hasil yang ditemukan.</p>
+    @endif
+    </section> --}}
     
     <a href="/tambahpeta" class="add-button rounded-circle m-3" style="background-image: url(/css/img/add.svg); background-size: contain;" ></a>
 
@@ -73,5 +81,13 @@
         </div>
       </div>
     </div>
+    {{-- <section class="no-data" >
+      @if($map->count() > 0)
+      <section class="white-space" ></section>   
+      @else
+      <div class="flag-icon" ></div>
+      <p style="opacity: 50%;">Tidak ada hasil yang ditemukan.</p>
+  @endif
+  </section> --}}
 </div>
 @endsection

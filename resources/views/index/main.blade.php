@@ -24,17 +24,23 @@
                 </div>
                 <div class="box">
                 </div>
+                <form action="/login/store" method="post">
+                @csrf
                 <div class="box">
                     <label for="email">Email</label>
-                    <input id="email" class="w-100 h-75 ps-1" style="border: 3px solid #FF8A35" type="text">
-                </div>
+                    <input type="email" id="email" name="email" class="w-100 h-75 ps-1" style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Email..." required>
+                </div>  
+                <div class="box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="w-100 h-75 ps-1" style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Password..." required>
+                </div> 
                 <div class="box">
                     <label for="code">Kode</label>
-                    <input id="code" class="w-100 h-75 ps-1" style="border: 3px solid #FF8A35" type="text">
+                    <input type="kode" id="code" name="kode" class="w-100 h-75 ps-1" style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Kode..." required>
                 </div>
-                <button class="bg-primary-mu border-0 bold fs-5 text-uppercase">
-                    <a class="text-decoration-none " style="color: white" href="/statistik">Masuk</a>
+                <button class="bg-primary-mu border-0 bold fs-5 text-uppercase" type="submit" name="submit">MASUK
                 </button>
+                </form>
             </div>
         </div>
     </div>
