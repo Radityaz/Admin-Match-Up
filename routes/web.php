@@ -83,6 +83,8 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', [LoginController::class, 'showlogin'])->name('login');
 Route::post('/login/store', [LoginController::class, 'login']);
 
+Route::get('/logout', [LoginController::class, 'logout']);
+
 // Route::get('/editpeta', function () {
 //     return view('home.peta.edit',[
 //         "title" => "peta"
