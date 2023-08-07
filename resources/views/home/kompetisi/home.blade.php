@@ -15,10 +15,13 @@
         <div class="wrapper-box shadow-regular p-2">
             <div class="upperbox d-flex align-items-center">
                 <div class="logo-xl blank rounded-circle"></div>
-                <div class="ps-2 h-100 w-50 d-flex flex-column justify-content-evenly">
+                <div class="ps-2 h-100 w-75 d-flex flex-column justify-content-evenly">
                     <p class="text-muted m-0" style="font-size: 8px;" >Penyelengara Kompetisi</p>
                     <h3 class="bold m-0" >{{$kompetisi->title}}</h3>
-                    <span class="w-50 d-inline-block text-center bold"  style="border: 2px solid #7C5CB1; font-size: 12px; color:#7C5CB1 ">{{$kompetisi->tingkatan}}</span>
+                    <span class="w-75 d-flex" style="gap: 13px">
+                        <span class="w-50 d-inline-block text-center bold"  style="border: 2px solid #FE6B00; font-size: 12px; color:#FE6B00 ">Terbuka</span>
+                        <span class="w-50 d-inline-block text-center bold"  style="border: 2px solid #7C5CB1; font-size: 12px; color:#7C5CB1 ">{{$kompetisi->tingkatan}}</span>
+                    </span>
                 </div>
             </div>
             <div class="infobox">
