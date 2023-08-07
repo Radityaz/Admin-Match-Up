@@ -52,7 +52,7 @@
                     </div>
                     <div class="edit-image ms-2 p-0 m-0">
                         <label for="image" class="rounded-circle blank" style="width: 35px; height: 35px"></label>
-                        {{-- <input  style="display: none" type="file" id="image" name="image" onchange="previewImage()"> --}}
+                        <input  style="display: none" type="file" id="image" name="image" onchange="previewImage()">
                     </div>
                 </div>
         </section>
@@ -122,7 +122,13 @@
                 </div>
                 <div class="mb-3 " >
                     <label for="tingkatan" class="form-label">Tingkatan</label>
-                    <input type="text" class="form-control input-kompetisi h-50" id="tingkatan" name="tingkatan" placeholder="Masukkan tingkatan kompetisi..." style="border: 3px solid #FF8A35">
+                    {{-- <input type="text" class="form-control input-kompetisi h-50" id="tingkatan" name="tingkatan" placeholder="Masukkan tingkatan kompetisi..." style="border: 3px solid #FF8A35"> --}}
+                    <select type="text" class="form-select input-kompetisi" id="tingkatan" name="tingkatan" placeholder="Masukkan Tingkatan umur..." style="border: 3px solid #FF8A35">
+                        <option value="">Pilih Tingkatan...</option>
+                        <option value="7-10">7-10</option>
+                        <option value="10-17">10-17</option>
+                        <option value="17-20">17-20</option>
+                    </select>
                 </div>
             </div>
         </section>
@@ -143,11 +149,11 @@
                 </div>
                 <div class="mb-3" style="grid-area: w5-4" >
                     <label for="Pukul" class="form-label">Pukul</label>
-                    <input type="number" class="form-control input-kompetisi h-50 " id="Pukul" name="waktu_pertandingan" placeholder="Masukkan waktu pertadingan..." style="border: 3px solid #FF8A35">
+                    <input type="time" class="form-control input-kompetisi h-50 " id="Pukul" name="waktu_pertandingan" placeholder="Masukkan waktu pertadingan..." style="border: 3px solid #FF8A35">
                 </div>
                 <div class="mb-3" style="grid-area: w5-5" >
                     <label for="PlusInfo" class="form-label">Informasi Tambahan</label>
-                    <textarea type="number" class="form-control input-kompetisi " id="slot" name="deskripsi_tambahan" placeholder="Masukkan informasi tambahan..." style="border: 3px solid #FF8A35; height: 90%; resize: none "></textarea>
+                    <textarea class="form-control input-kompetisi " id="slot" name="deskripsi_tambahan" placeholder="Masukkan informasi tambahan..." style="border: 3px solid #FF8A35; height: 90%; resize: none "></textarea>
                 </div>
             </div>
             
