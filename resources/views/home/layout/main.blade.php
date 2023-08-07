@@ -15,9 +15,9 @@
             <div class="col-2 bg-primary-mu p-0 h-100 d-flex flex-column justify-content-between">
                 <div class="d-flex flex-column" >
                     <div style="height: 35vh" class="p-3 mb-3 d-flex flex-column justify-content-evenly align-items-center" >
-                        <img class="admin-logo rounded-circle blank">
-                        <h5 class="m-0 bold" >Title</h5>
-                        <p style="font-size: 12px; opacity: 75%"  class="m-0" >Email</p>
+                        <img class="admin-logo rounded-circle blank" src=">{{$user->image}}">
+                        <h5 class="m-0 bold" >{{$user->name}}</h5>
+                        <p style="font-size: 12px; opacity: 75%"  class="m-0" >{{$user->email}}</p>
                     </div>
                     <a href="/statistik" class="w-100 navbar-button ps-3" style="{{ session('page') === 'statistik' ? 'background: white' : 'background: #FF8A35' }}" >
                         <img class="logo-xsm d-inline-block " src="/css/img/statistik.svg"  style="{{ session('page') === 'statistik' ? 'filter: none;' : 'filter: brightness(0) invert(1);' }} object-fit: contain;" >
@@ -38,7 +38,7 @@
                 </div>
                 <a href="/" class="w-100 navbar-button ps-3 " >
                     <div class="logo-xsm d-inline-block " style="background-image: url(/css/img/logout.svg); background-size: contain;" ></div>
-                    <p class="m-0 ms-3">log Out</p>
+                    <a class="m-0 ms-3" href="/logout">log Out</a>
                 </a>
             </div>
             <div class="col-10" style="overflow-y: auto">
