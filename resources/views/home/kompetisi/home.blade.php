@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="actionbox">
-                <a href="#" class="text-center bg-success border-0 text-white" style="text-decoration: none" >Edit</a>
+                <a href="/editkompetisi/{{$kompetisi->id}}/edit" class="text-center bg-success border-0 text-white" style="text-decoration: none" >Edit</a>
                 <button class="bg-danger border-0 text-white" >Delete</button>
             </div>
         </div>

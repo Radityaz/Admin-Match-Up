@@ -27,7 +27,7 @@
           <td>100</td>
           <td>
             <a href="/detailpengguna/{{$user->id}}" class="btn btn-success">Detail</a>
-            <a href="/detailpenggunaa/{{$user->id}}" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" >Blokir</a>
+            <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" >Blokir</a>
           </td>
         </tr>
         @endforeach
@@ -46,13 +46,17 @@
           </div>
           <div class="modal-body">
             <p  >Anda yakin ingin memblokir pengguna ini?</p>
-            <p>Nama: {{$user->name}}</p>
-            <p>Email: {{$user->email}}</p>
+            {{-- <p>Nama: {{$user->name}}</p>
+            <p>Email: {{$user->email}}</p> --}}
             <p class="bold font-primary-mu" >Skor: 100</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-            <button type="button" class="btn btn-danger">Blokir</button>
+            <form class="content1" action="/pengguna/{{$user->id}}" method="POST">
+                @csrf
+                @method('delete')
+              <button type="submit" class="btn btn-danger">Blokir</button>
+            </form>
           </div>
         </div>
       </div>

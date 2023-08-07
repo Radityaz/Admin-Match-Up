@@ -1,3 +1,5 @@
+@extends('home.layout.main')
+@section('content')
 <div class="modal" id="exampleModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content" style="width: 32vw">
@@ -22,3 +24,4 @@
         </div>
     </div>
 </div>
+@endsection

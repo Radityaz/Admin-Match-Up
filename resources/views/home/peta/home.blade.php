@@ -32,13 +32,13 @@
             <td>{{ $map->harga_sewa_lokasi }}</td>
             <td>
               <a href="/editpeta/{{$map->id}}/edit" class="btn btn-success">Edit</a>
-              <form class="d-inline-block" action="/peta/{{$map->id}}" method="post">
-                @csrf
-                @method('delete')
-                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              {{-- <form class="d-inline-block" action="/peta/detaildestroy/{{$map->id}}" method="get">
+                @csrf --}}
+                {{-- @method('delete') --}}
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$map->id}}">
                     Hapus
                 </button>
-            </form>            
+            {{-- </form>--}}
             </td>
           </tr>
           @endforeach
@@ -46,10 +46,18 @@
         </tbody>
         
       </table>
+      {{-- <section class="no-data" >
+        @if($map->count() > 0)
+        <section class="white-space" ></section>   
+        @else
+        <div class="flag-icon" ></div>
+        <p style="opacity: 50%;">Tidak ada hasil yang ditemukan.</p>
+    @endif
+    </section> --}}
     
     <a href="/tambahpeta" class="add-button rounded-circle m-3" style="background-image: url(/css/img/add.svg); background-size: contain;" ></a>
 
-    {{-- <div class="modal" id="exampleModal" tabindex="-1">
+    <div class="modal" id="exampleModal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content" style="width: 32vw" >
           <div class="modal-header bg-primary-mu">
@@ -72,6 +80,14 @@
           </div>
         </div>
       </div>
-    </div> --}}
+    </div>
+    {{-- <section class="no-data" >
+      @if($map->count() > 0)
+      <section class="white-space" ></section>   
+      @else
+      <div class="flag-icon" ></div>
+      <p style="opacity: 50%;">Tidak ada hasil yang ditemukan.</p>
+  @endif
+  </section> --}}
 </div>
 @endsection

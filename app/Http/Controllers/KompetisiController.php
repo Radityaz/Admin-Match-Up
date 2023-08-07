@@ -57,5 +57,36 @@ class KompetisiController extends Controller
         return redirect('/kompetisi');
     }
 
+    public function edit($id)
+    {
+        // dd($id);
+        $kompetisi = DB::table('kompetisi')->find($id);
+        return view('home.kompetisi.edit', compact(['kompetisi']));
+    }
+
+    public function update($id, Request $request ){
+        // dd($request->all());
+        $kompetisi = DB::table('kompetisi')->find($id);
+        DB::table('kompetisi')
+        ->where('id', $id)
+        ->update([
+            'title' => $request->title,
+            'olahraga' => $request->olahraga,
+            'deskripsi' => $request->deskripsi,
+            'juara_pertama' => $request->juara_pertama,
+            'juara_kedua' => $request->juara_kedua,
+            'juara_ketiga' => $request->juara_ketiga,
+            'lokasi' => $request->lokasi,
+            'max_member' => $request->max_member,
+            'tingkatan' => $request->tingkatan,
+            'tanggal_pertandingan' => $request->tanggal_pertandingan,
+            'harga_tiket' => $request->harga_tiket,
+            'lama_pertandingan' => $request->lama_pertandingan,
+            'waktu_pertandingan' => $request->waktu_pertandingan,
+            'deskripsi_tambahan' => $request->deskripsi_tambahan,
+        ]);
+        return redirect('/kompetisi');
+    }
+
     
 }

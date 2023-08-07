@@ -48,7 +48,8 @@ class MapController extends Controller
 
     public function detaildestroy($id){
         $map = Map::find($id);
-        return view('home.peta.detaildestroy', compact(['map']));
+        // return redirect('/peta#exampleModal');
+        return redirect()->route('home.peta.home') . '#exampleModal';
     }
 
     public function edit($id)
