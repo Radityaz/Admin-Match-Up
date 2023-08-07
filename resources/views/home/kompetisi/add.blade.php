@@ -51,7 +51,7 @@
                         <img class="img-preview rounded-circle" style="height: 150px; width: 150px; object-fit:cover; object-position: center; position: relative"  alt="">
                     </div>
                     <div class="edit-image ms-2 p-0 m-0">
-                        <label for="image" class="rounded-circle blank" style="width: 35px; height: 35px"></label>
+                        <label for="image" class="rounded-circle add-image-icon" style="width: 35px; height: 35px;"></label>
                         <input  style="display: none" type="file" id="image" name="image" onchange="previewImage()">
                     </div>
                 </div>
@@ -61,7 +61,7 @@
             <div class="kompetisi-wrapper-1 w-50 p-2 shadow-still">
                 <div class="mb-3" style="grid-area: w1-1" >
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control input-kompetisi" id="title" name="title" placeholder="Masukkan title kompetisi..." style="border: 3px solid #FF8A35">
+                    <input type="text" maxlength="30" class="form-control input-kompetisi" id="title" name="title" placeholder="Masukkan title kompetisi (maksimal 30)" style="border: 3px solid #FF8A35">
                 </div>
                 <div class="mb-3 " style="grid-area: w1-2">
                     <label for="olahraga" class="form-label">Olahraga</label>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="mb-3" style="grid-area: w1-3">
                     <label for="deskripsi" class="form-label">Deskripsi</label>
-                    <textarea type="text" class="form-control input-kompetisi" id="deskripsi" name="deskripsi" placeholder="Masukkan deskripsi kompetisi..." style="border: 3px solid #FF8A35; height: 90%; resize: none;"></textarea>
+                    <textarea type="text" maxlength="255" class="form-control input-kompetisi" id="deskripsi" name="deskripsi" placeholder="Masukkan deskripsi kompetisi (maksimal 255)" style="border: 3px solid #FF8A35; height: 90%; resize: none;"></textarea>
                 </div>
             </div>
         </section>
@@ -153,7 +153,7 @@
                 </div>
                 <div class="mb-3" style="grid-area: w5-5" >
                     <label for="PlusInfo" class="form-label">Informasi Tambahan</label>
-                    <textarea class="form-control input-kompetisi " id="slot" name="deskripsi_tambahan" placeholder="Masukkan informasi tambahan..." style="border: 3px solid #FF8A35; height: 90%; resize: none "></textarea>
+                    <textarea maxlength="255" class="form-control input-kompetisi " id="slot" name="deskripsi_tambahan" placeholder="Masukkan informasi tambahan (maksimal 255)" style="border: 3px solid #FF8A35; height: 90%; resize: none "></textarea>
                 </div>
             </div>
             

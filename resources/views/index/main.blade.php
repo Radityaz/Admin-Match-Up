@@ -18,13 +18,10 @@
                     <h6 style="font-size: 40px">PAGE</h6>
                 </span>
             </div>
-            <div class="col-6 login-grid p-3 ">
+            <form class="col-6 login-grid p-3 " action="/login/store" method="post">
                 <div class="div">
                     <h5>Selamat Datang</h5>
                 </div>
-                <div class="box">
-                </div>
-                <form action="/login/store" method="post">
                 @csrf
                 <div class="box">
                     <label for="email">Email</label>
@@ -38,10 +35,8 @@
                     <label for="code">Kode</label>
                     <input type="kode" id="code" name="kode" class="w-100 h-75 ps-1" style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Kode..." required>
                 </div>
-                <button class="bg-primary-mu border-0 bold fs-5 text-uppercase" type="submit" name="submit">MASUK
-                </button>
-                </form>
-            </div>
+                <button class="bg-primary-mu border-0 bold fs-5 text-uppercase" type="submit" name="submit">MASUK</button>
+            </form>
         </div>
     </div>
 
