@@ -22,6 +22,7 @@ class KompetisiController extends Controller
         // dd($request->all());
         $this->validate($request, rules: [
             'title' => 'required',
+            'image' => 'required|mimes:jpg,jpeg,png,gif',
             'olahraga' => 'required',
             'deskripsi' => 'required',
             'juara_pertama' => 'required',
@@ -37,13 +38,17 @@ class KompetisiController extends Controller
             'deskripsi_tambahan' => 'required',
         ]);
 
+        $file_name = $request->image->getClientOriginalName();
+        $image = $request->image->storeAs('image2', $file_name);
+
         DB::table('kompetisi')->insert([
             'title' => $request->title,
+            'image' => $image,
             'olahraga' => $request->olahraga,
             'deskripsi' => $request->deskripsi,
             'juara_pertama' => $request->juara_pertama,
-            'juara_kedua' => $request->juara_pertama,
-            'juara_ketiga' => $request->juara_pertama,
+            'juara_kedua' => $request->juara_kedua,
+            'juara_ketiga' => $request->juara_ketiga,
             'lokasi' => $request->lokasi,
             'max_member' => $request->max_member,
             'tingkatan' => $request->tingkatan,

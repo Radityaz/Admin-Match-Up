@@ -72,7 +72,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-            <form action="/peta/{{$map->id}}" method="post">
+            {{-- <form action="/peta/{{$map->id}}" method="post"> --}}
               @csrf
               @method('delete')
               <button type="button" class="btn btn-danger" type="submit" value="Delete">Hapus</button> 
