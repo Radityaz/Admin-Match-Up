@@ -15,7 +15,7 @@
             <div class="col-2 bg-primary-mu p-0 h-100 d-flex flex-column justify-content-between">
                 <div class="d-flex flex-column" >
                     <div style="height: 35vh" class="p-3 mb-3 d-flex flex-column justify-content-evenly align-items-center" >
-                        <img class="admin-logo rounded-circle blank" src=">{{$user->image}}">
+                        <img class="admin-logo rounded-circle blank" src="{{$user->image}}">
                         <h5 class="m-0 bold" >{{$user->name}}</h5>
                         <p style="font-size: 12px; opacity: 75%"  class="m-0" >{{$user->email}}</p>
                     </div>
