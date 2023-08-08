@@ -17,7 +17,7 @@
                     <div style="height: 35vh" class="p-3 mb-3 d-flex flex-column justify-content-evenly align-items-center" >
                         <img class="admin-logo rounded-circle blank" src="{{$user->image}}">
                         <h5 class="m-0 bold" >{{$user->name}}</h5>
-                        <p style="font-size: 12px; opacity: 75%"  class="m-0" >{{$user->email}}</p> --}}
+                        <p style="font-size: 12px; opacity: 75%"  class="m-0" >{{$user->email}}</p>
                     </div>
                     <a href="/statistik" class="w-100 navbar-button ps-3" style="{{ session('page') === 'statistik' ? 'background: white' : 'background: #FF8A35' }}" >
                         <img class="logo-xsm d-inline-block " src="/css/img/statistik.svg"  style="{{ session('page') === 'statistik' ? 'filter: none;' : 'filter: brightness(0) invert(1);' }} object-fit: contain;" >
