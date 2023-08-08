@@ -9,12 +9,10 @@
         <button class="btn bg-primary-mu rounded-0" type="button">Cari</button>
     </div> 
     @foreach ($kompetisi as $kompetisi)
-        
-    
     <div class="container wrapper m-0 p-0 pb-3">
         <div class="wrapper-box shadow-regular p-2">
             <div class="upperbox d-flex align-items-center">
-                <div class="logo-xl blank rounded-circle"></div>
+                <img class="box-logo rounded-circle" src="{{asset('storage/'. $kompetisi->image)}}" alt="" style="object-fit: cover; object-position: center;">
                 <div class="ps-2 h-100 w-75 d-flex flex-column justify-content-evenly">
                     <p class="text-muted m-0" style="font-size: 8px;" >Penyelengara Kompetisi</p>
                     <h3 class="bold m-0" >{{$kompetisi->title}}</h3>
