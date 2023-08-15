@@ -4,9 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Models\Map;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class MapController extends Controller
 {
+    public function getdatalocation(){
+        
+        $lokasi = Map::all();
+        return response()->json([
+            'data' => $lokasi
+        ]);
+        
+    }
+
+    public function getapidatalocation()
+    {
+        
+        // $response = Http::timeout(60000)->get('http://127.0.0.1:8000/api/getdatalocation');
+        $response = Http::get('http://127.0.0.1:5000/api/getdatalocation'); // Ganti URL dengan URL API Anda
+        $data = $response->json(); // Konversi respons API menjadi array
+        $peta = $data['data']; // Simpan data lokasi dalam variabel $peta
+
+        return view('user.usersparring.tambahsparringnew', compact('peta'));
+
+    }
+
     public function index(){
         $map = Map::all();
 
