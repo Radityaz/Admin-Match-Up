@@ -8,19 +8,19 @@
         <input type="text" class="ps-2 b-primary-mu border-3  " placeholder="Olahraga..." aria-label="Cari">
         <button class="btn bg-primary-mu rounded-0" type="button">Cari</button>
     </div> 
+    <div class="container wrapper m-0 p-0 pb-3">
     @foreach ($kompetisi as $kompetisi)
-        <div class="container wrapper m-0 p-0 pb-3">
-            <div class="wrapper-box shadow-regular p-2">
-                <div class="upperbox d-flex align-items-center">
-                    <img class="box-logo p-0 m-0 rounded-circle" src="{{asset('storage/'. $kompetisi->image)}}" alt="" style="object-fit: cover; object-position: center;" >
-                    <div class="ps-2 h-100 w-75 d-flex flex-column justify-content-evenly">
-                        <p class="text-muted m-0" style="font-size: 8px;" >Penyelengara Kompetisi</p>
-                        <h3 class="bold m-0" >{{$kompetisi->title}}</h3>
-                        <span class="w-75 d-flex" style="gap: 13px">
-                            <span class="w-50 d-inline-block text-center bold"  style="border: 2px solid #FE6B00; font-size: 12px; color:#FE6B00 ">Terbuka</span>
-                            <span class="w-50 d-inline-block text-center bold"  style="border: 2px solid #7C5CB1; font-size: 12px; color:#7C5CB1 ">{{$kompetisi->tingkatan}}</span>
-                        </span>
-                    </div>
+
+        <div class="wrapper-box shadow-regular p-2">
+            <div class="upperbox d-flex align-items-center">
+                <img class="box-logo p-0 m-0 rounded-circle" src="{{asset('storage/'. $kompetisi->image)}}" alt="" style="object-fit: cover; object-position: center;" >
+                <div class="ps-2 h-100 w-75 d-flex flex-column justify-content-evenly">
+                    <p class="text-muted m-0" style="font-size: 8px;" >Penyelengara Kompetisi</p>
+                    <h3 class="bold m-0" >{{$kompetisi->title}}</h3>
+                    <span class="w-75 d-flex" style="gap: 13px">
+                        <span class="w-50 d-inline-block text-center bold"  style="border: 2px solid #FE6B00; font-size: 12px; color:#FE6B00 ">Terbuka</span>
+                        <span class="w-50 d-inline-block text-center bold"  style="border: 2px solid #7C5CB1; font-size: 12px; color:#7C5CB1 ">{{$kompetisi->tingkatan}}</span>
+                    </span>
                 </div>
                 <div class="infobox">
                     <div>
@@ -42,7 +42,12 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d1d06b7236bbaa26b5afa2cae4d487698c1d496d
     @endforeach
+</div>
 </div>
 <a href="/tambahkompetisi" class="add-button rounded-circle m-3" style="background-image: url(/css/img/add.svg); background-size: contain;" ></a>
 @endsection
