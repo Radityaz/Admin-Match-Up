@@ -9,6 +9,7 @@ class KompetisiController extends Controller
 {   
     public function index(){
         $kompetisi = DB::table('kompetisi')->get();
+        
         return view('home.kompetisi.home', compact(['kompetisi']));
     }
 
