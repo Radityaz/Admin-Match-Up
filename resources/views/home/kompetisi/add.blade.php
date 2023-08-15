@@ -12,23 +12,24 @@
             <button type="button" class="btn-close btn-close-white"data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input class="w-100 ps-3" type="text" id="searchinput" onkeyup="searchLocation()" placeholder="Masukkan Nama Lokasi" style="height: 10%" type="text">
+                <input class="w-100 ps-3" type="text" id="searchinput" onkeyup="searchLocation()" placeholder="Masukkan Nama Lokasi" style="height: 10%; border: 3px solid #FFA767; border-radius: 8px" type="text">
+                {{-- @foreach ($peta as $peta) --}}
                 <div id="table_data" class="w-100 maps-wrapper">
-                <button class="maps-box p-3 b-0" data-filter="markas" onclick="mapsList(0)" data-bs-dismiss="modal">
-                    <h6 class="fw-bold">Markas</h6>
-                    <p class="m-0" >Detail</p>
-                </button>
-                <button class="maps-box p-3 b-0" data-filter="berlian" onclick="mapsList(1)" data-bs-dismiss="modal">
-                    <h6 class="fw-bold">Berlian</h6>
-                    <p class="m-0" >Detail</p>
-                </button>
-                <button class="maps-box p-3 b-0" data-filter="lapangan" onclick="mapsList(2)" data-bs-dismiss="modal">
-                    <h6 class="fw-bold">Lapangan Besito</h6>
-                    <p class="m-0" >Detail</p>
-                </button>
+                        {{-- <button class="maps-box p-3 b-0" data-filter="markas" onclick="mapsList(0)" data-bs-dismiss="modal">
+                            <h6 class="fw-bold">Markas Sport Center</h6>
+                            <p>Detail</p>
+                        </button> --}}
+                        {{-- <button class="maps-box p-3 b-0" data-filter="berlian" onclick="mapsList(1)" data-bs-dismiss="modal">
+                            <h6 class="fw-bold">Berlian Sport Center</h6>
+                            <p>Detail</p>
+                        </button>
+                        <button class="maps-box p-3 b-0" data-filter="lapangan_besito" onclick="mapsList(2)" data-bs-dismiss="modal">
+                            <h6 class="fw-bold">Lapangan Besito</h6>
+                            <p>Detail</p>
+                        </button> --}}
                 </div>
-            </div>
-            
+                {{-- @endforeach --}}
+              </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
             </div>
@@ -103,13 +104,16 @@
                 <div class="mb-3" >
                     <label for="lokasi" class="form-label">Lokasi Kompetisi</label>
                     <div class="w-100" style="display: grid; grid-template-columns: 3fr 1fr; gap: 15px;">
-                        <input type="text" class="form-control input-kompetisi h-100" id="lokasi" name="lokasi" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35">
+                        <input type="text" class="form-control input-kompetisi h-100" id="locationtext" name="lokasi" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35">
                         <a data-bs-toggle="modal" data-bs-target="#MapsInput" class="btn bg-primary-mu h-100">Tambah</a>
+                        <input id="locationtext_detail" class="d-none" name="detail_lokasi" type="text">
                     </div>
                 </div>
                 <div>
                     <p class="d-flex align-items-center" >Detail Lokasi</p>
-                    <iframe src="" class="blank w-100" style="height: 85%" frameborder="0"></iframe>
+                    <iframe src="" class="blank w-100" id="frame-location" style="height: 85%" frameborder="0"></iframe>
+                    <input class="d-none" name="embed_lokasi" id="frame_url"  type="text">
+
                 </div>
             </div>
         </section>
@@ -163,4 +167,5 @@
         </section>
     </form>
     </div>
+    <script src="/js/mapslist.js"></script>
 @endsection

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title_lokasi');
             $table->string('detail_lokasi');
             $table->string('harga_sewa_lokasi');
-            $table->string('embed_google_map', 300);
+            $table->string('embed_google_map', 350);
             $table->timestamps();
         });
     }
