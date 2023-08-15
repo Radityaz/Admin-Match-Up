@@ -21,8 +21,8 @@
     margin: 0px;
     padding: 0px;
     font-family: opensans;
-    outline: 1px solid red;
-    grid
+    /* outline: 1px solid red; */
+
 }
 
 /* SPECIAL CODE */
@@ -124,7 +124,7 @@
 .login-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr  1fr 1fr 1fr 1fr;
     gap: 30px;
 }
 
