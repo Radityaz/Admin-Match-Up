@@ -26,7 +26,7 @@ function Callapi(data) {
         mapBox.dataset.bsDismiss = "modal";
         mapBox.innerHTML = '<h6 id="mapslocation' + item.id + '" class="fw-bold">' + item.title_lokasi + '</h6>';
         mapBox.innerHTML += '<p id="mapsdetail' + item.id + '" class="p-0 m-0" style="font-size: 10px;">' + item.detail_lokasi + '</p>';
-        mapBox.innerHTML += '<p id="mapsurl' + item.id + '" class="p-0 m-0 d-none">' + item.embed_lokasi + '</p>';
+        mapBox.innerHTML += '<p id="mapsurl' + item.id + '" class="p-0 m-0 d-none">' + item.embed_google_map + '</p>';
         container.appendChild(mapBox);
     });
 }

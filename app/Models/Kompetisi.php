@@ -12,7 +12,13 @@ class Kompetisi extends Model
     protected $guarded = [];
     
 
-    public function maps(){
-        return $this->hasMany(Map::class);
+    // public function maps(){
+    //     return $this->hasMany(Map::class);
+    // }
+
+    public function maps()
+    {
+        return $this->hasMany(Map::class, 'kompetisi_id');
     }
+
 }
