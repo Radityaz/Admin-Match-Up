@@ -10,7 +10,6 @@
     </div> 
     <div class="container wrapper m-0 p-0 pb-3">
     @foreach ($kompetisi as $kompetisi)
-
         <div class="wrapper-box shadow-regular p-2">
             <div class="upperbox d-flex align-items-center">
                 <img class="box-logo p-0 m-0 rounded-circle" src="{{asset('storage/'. $kompetisi->image)}}" alt="" style="object-fit: cover; object-position: center;" >
@@ -42,10 +41,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> d1d06b7236bbaa26b5afa2cae4d487698c1d496d
     @endforeach
 </div>
 </div>
