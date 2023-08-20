@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kompetisi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class KompetisiController extends Controller
 {   
     public function index(){
-        $kompetisi = DB::table('kompetisi')->get();
+        $kompetisi = Kompetisi::all();
         session()->flash('page', 'kompetisi');
-        return view('home.kompetisi.home', compact(['kompetisi']));
+        
+        $joinedKompetisiCount = [];
+        foreach ($kompetisi as $kompetisiItem) {
+            $joinedKompetisiCounts[$kompetisiItem->id] = $kompetisiItem->joinedKompetisi->count();
+        }
+
+        return view('home.kompetisi.home', compact(['kompetisi', 'joinedKompetisiCount']));
     }
 
     public function tambah(){

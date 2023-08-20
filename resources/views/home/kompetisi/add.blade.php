@@ -61,7 +61,7 @@
             <div class="w-50 m-0 p-2 bg-primary-mu"><h3>Title</h3></div>
             <div class="kompetisi-wrapper-1 w-50 p-2 shadow-still">
                 <div class="mb-3" style="grid-area: w1-0" >
-                    <label for="title" class="form-label">Title</label>
+                    <label for="title" class="form-label">Penyelenggara</label>
                     <input type="text" maxlength="30" class="form-control input-kompetisi" id="penyelengara" name="penyelengara" placeholder="Masukkan penyelengara kompetisi (maksimal 30)" style="border: 3px solid #FF8A35">
                 </div>
                 <div class="mb-3" style="grid-area: w1-1" >

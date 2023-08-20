@@ -29,7 +29,7 @@
                                 </div> 
                             </div>
                         <div class="h-75" >
-                            <p class="m-0 p-0" style="font-size: 11px;">Penyelengara Kompetisi</p>  
+                            <p class="m-0 p-0" style="font-size: 11px;">{{$kompetisi->penyelengara}}</p>  
                             <h5 class="bold m-0" >{{$kompetisi->title}}</h5>
                             <span class="w-100 d-flex my-1" style="gap: 10px">
                                 <span class="w-50 d-inline-block text-center bold "  style="border: 2px solid #FE6B00; font-size: 12px; color:#FE6B00 ; border-radius: 100px;">Terbuka</span>
@@ -55,7 +55,10 @@
                 <hr class="my-1 p-0" >
                 <div class="d-felx justify-content-between" >
                     <span class="font-primary-mu" style="font-family: opensans-bold" >Member</span>
-                    <span class="font-primary-mu" style="font-family: opensans-bold" >0/2</span>
+                    @php
+                        $joinedKompetisiCount = $kompetisi->joinedKompetisi->count();
+                    @endphp
+                    <span class="font-primary-mu" style="font-family: opensans-bold" >{{$joinedKompetisiCount}}/{{$kompetisi->max_member}}</span>
                 </div>
             </div>
         </div>
