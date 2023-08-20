@@ -18,12 +18,14 @@ class UserController extends Controller
     public function index2(){
         $user = DB::table('users')->get();
         session()->flash('page', 'pengguna');
+
         return view('home.pengguna.home', compact(['user']));
     }
 
     public function detail($id){
         $user = DB::table('users')->find($id);
         session()->flash('page', 'pengguna');
+        // dd($user);
         return view('home.pengguna.detail', compact(['user']));
     }
 

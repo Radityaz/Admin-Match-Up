@@ -31,12 +31,13 @@ class MapController extends Controller
 
     public function index(){
         $map = Map::all();
-
+        session()->flash('page', 'peta');
         return view('home.peta.home', compact('map'));
     }
 
     public function tambah(){
         $map = Map::all();
+        session()->flash('page', 'peta');
         return view('home.peta.add', compact(['map']));
     }
 
@@ -78,12 +79,15 @@ class MapController extends Controller
     {
         // dd($id);
         $map = Map::find($id);
+        session()->flash('page', 'peta');
         return view('home.peta.edit', compact(['map']));
     }
 
     public function update($id, Request $request ){
         // dd($request->all());
         $map = Map::find($id);
+        session()->flash('page', 'peta');
+
         $map->update([
             'title_lokasi' => $request->title_lokasi,
             'detail_lokasi' => $request->detail_lokasi,

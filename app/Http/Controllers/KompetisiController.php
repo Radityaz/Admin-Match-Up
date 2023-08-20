@@ -9,12 +9,13 @@ class KompetisiController extends Controller
 {   
     public function index(){
         $kompetisi = DB::table('kompetisi')->get();
-        
+        session()->flash('page', 'kompetisi');
         return view('home.kompetisi.home', compact(['kompetisi']));
     }
 
     public function tambah(){
         $kompetisi = DB::table('kompetisi')->get();
+        session()->flash('page', 'kompetisi');
         return view('home.kompetisi.add', compact(['kompetisi']));
     }
 
@@ -23,6 +24,7 @@ class KompetisiController extends Controller
         // dd($request->all());
         $this->validate($request, rules: [
             'title' => 'required',
+            'penyelengara' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png,gif',
             'olahraga' => 'required',
             'deskripsi' => 'required',
@@ -46,6 +48,7 @@ class KompetisiController extends Controller
 
         DB::table('kompetisi')->insert([
             'title' => $request->title,
+            'penyelengara' =>$request->penyelengara,
             'image' => $image,
             'olahraga' => $request->olahraga,
             'deskripsi' => $request->deskripsi,
@@ -71,16 +74,19 @@ class KompetisiController extends Controller
     {
         // dd($id);
         $kompetisi = DB::table('kompetisi')->find($id);
+        session()->flash('page', 'kompetisi');
         return view('home.kompetisi.edit', compact(['kompetisi']));
     }
 
     public function update($id, Request $request ){
         // dd($request->all());
         $kompetisi = DB::table('kompetisi')->find($id);
+        session()->flash('page', 'kompetisi');
         DB::table('kompetisi')
         ->where('id', $id)
         ->update([
             'title' => $request->title,
+            'penyelengara' => $request->penyelengara,
             'olahraga' => $request->olahraga,
             'deskripsi' => $request->deskripsi,
             'juara_pertama' => $request->juara_pertama,

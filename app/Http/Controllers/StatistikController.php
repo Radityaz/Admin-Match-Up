@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class StatistikController extends Controller
 {
-    // public function index(){
-    //     $statistik = Satistik::all();
-    // }
+    public function index(){
+        session()->flash('page', 'statistik');
+
+    }
 }

@@ -43,13 +43,13 @@
             <h3 class="text-dark m-0 p-0 ps-3">Edit Kompetisi {{ $kompetisi->title }}</h3>
             <div></div>
         </div>
-        <form action="/editkompetisi/{{$kompetisi->id}}" method="post">
+        <form action="/editkompetisi/{{$kompetisi->id}}" method="post" enctype="multipart/form-data" >
         @method('put')
         @csrf
         <section class="d-flex flex-column align-items-center justify-content-center py-3 mt-5 "  >
             <div class="add-image">
                 <div class="image-box" >
-                    <img class="img-preview rounded-circle" src="{{asset('storage/'. $kompetisi->image)}} style="height: 150px; width: 150px; object-fit:cover; object-position: center; position: relative"  alt="">
+                    <img class="img-preview rounded-circle" src="{{asset('storage/'. $kompetisi->image)}}" style="height: 150px; width: 150px; object-fit:cover; object-position: center; position: relative"  alt="">
                 </div>
                 <div class="edit-image ms-2 p-0 m-0">
                     <label for="image" class="rounded-circle blank" style="width: 35px; height: 35px"></label>

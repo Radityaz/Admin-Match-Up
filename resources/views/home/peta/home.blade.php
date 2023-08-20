@@ -9,7 +9,7 @@
 <div class="container pt-3">
     <div class="input-group mb-3">
       <input type="text" class="ps-2 b-primary-mu border-3  " placeholder="Cari..." aria-label="Cari">
-      <button class="btn bg-primary-mu rounded-0" type="button">Cari</button>
+      <button class="btn bg-primary-mu rounded-0 scale-hover " type="button">Cari</button>
     </div>  
     
       <table class="table">
@@ -31,11 +31,11 @@
             <td>{{ $map->detail_lokasi }}</td>
             <td>{{ $map->harga_sewa_lokasi }}</td>
             <td>
-              <a href="/editpeta/{{$map->id}}/edit" class="btn btn-success">Edit</a>
+              <a href="/editpeta/{{$map->id}}/edit" class="btn btn-success scale-hover ">Edit</a>
               {{-- <form class="d-inline-block" action="/peta/detaildestroy/{{$map->id}}" method="get">
                 @csrf --}}
                 {{-- @method('delete') --}}
-                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$map->id}}">
+                <button class="btn btn-danger scale-hover " data-bs-toggle="modal" data-bs-target="#exampleModal{{$map->id}}">
                     Hapus
                 </button>
             {{-- </form>--}}
@@ -55,7 +55,7 @@
     @endif
     </section> --}}
     
-    <a href="/tambahpeta" class="add-button rounded-circle m-3" style="background-image: url(/css/img/add.svg); background-size: contain;" ></a>
+    <a href="/tambahpeta" class="add-button rounded-circle m-3 scale-hover " style="background-image: url(/css/img/add.svg); background-size: contain;" ></a>
 
     <div class="modal" id="exampleModal" tabindex="-1">
       <div class="modal-dialog">
@@ -71,11 +71,11 @@
             <p>Anda yakin ingin Menghapus peta ini?</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-secondary scale-hover "  data-bs-dismiss="modal">Batal</button>
             {{-- <form action="/peta/{{$map->id}}" method="post"> --}}
               @csrf
               @method('delete')
-              <button type="button" class="btn btn-danger" type="submit" value="Delete">Hapus</button> 
+              <button type="button" class="btn btn-danger scale-hover " type="submit" value="Delete">Hapus</button> 
             </form>
           </div>
         </div>

@@ -60,6 +60,10 @@
         <section class="d-flex flex-column align-items-center py-3 mt-5 "  >
             <div class="w-50 m-0 p-2 bg-primary-mu"><h3>Title</h3></div>
             <div class="kompetisi-wrapper-1 w-50 p-2 shadow-still">
+                <div class="mb-3" style="grid-area: w1-0" >
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" maxlength="30" class="form-control input-kompetisi" id="penyelengara" name="penyelengara" placeholder="Masukkan penyelengara kompetisi (maksimal 30)" style="border: 3px solid #FF8A35">
+                </div>
                 <div class="mb-3" style="grid-area: w1-1" >
                     <label for="title" class="form-label">Title</label>
                     <input type="text" maxlength="30" class="form-control input-kompetisi" id="title" name="title" placeholder="Masukkan title kompetisi (maksimal 30)" style="border: 3px solid #FF8A35">
@@ -71,7 +75,7 @@
                         <option value="Sepak Bola">Sepak Bola</option>
                         <option value="Futsal">Futsal</option>
                         <option value="Ping Pong">Ping Pong</option>
-                        <option value="Bulutangkis">Bulutangkis</option>
+                        <option value="Badminton">Badminton</option>
                         <option value="Renang">Renang</option>
                     </select>
                 </div>
@@ -86,15 +90,15 @@
             <div class="kompetisi-wrapper-2 w-50 p-2 shadow-still">
                 <div class="mb-3" style="grid-area: w2-1" >
                     <label for="juara1" class="form-label">Juara 1</label>
-                    <textarea type="text" class="form-control input-kompetisi h-75 " id="juara1" name="juara_pertama" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35; resize: none;"></textarea>
+                    <textarea type="text" class="form-control input-kompetisi h-75 " maxlength="225" id="juara1" name="juara_pertama" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35; resize: none;"></textarea>
                 </div>
                 <div class="mb-3 " style="grid-area: w2-2">
                     <label for="juara2" class="form-label">Juara 2</label>
-                    <textarea type="text" class="form-control input-kompetisi h-75" id="juara2" name="juara_kedua" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35;resize: none;"></textarea>
+                    <textarea type="text" class="form-control input-kompetisi h-75" maxlength="255" id="juara2" name="juara_kedua" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35;resize: none;"></textarea>
                 </div>
                 <div class="mb-3" style="grid-area: w2-3">
                     <label for="juara3" class="form-label">Juara 3</label>
-                    <textarea type="text" class="form-control input-kompetisi h-75" id="juara3" name="juara_ketiga" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35; resize: none;"></textarea>
+                    <textarea type="text" class="form-control input-kompetisi h-75" maxlength="255" id="juara3" name="juara_ketiga" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35; resize: none;"></textarea>
                 </div>
             </div>
         </section>
@@ -128,10 +132,12 @@
                     <label for="tingkatan" class="form-label">Tingkatan</label>
                     {{-- <input type="text" class="form-control input-kompetisi h-50" id="tingkatan" name="tingkatan" placeholder="Masukkan tingkatan kompetisi..." style="border: 3px solid #FF8A35"> --}}
                     <select type="text" class="form-select input-kompetisi" id="tingkatan" name="tingkatan" placeholder="Masukkan Tingkatan umur..." style="border: 3px solid #FF8A35">
-                        <option value="">Pilih Tingkatan...</option>
-                        <option value="7-10">7-10</option>
-                        <option value="10-17">10-17</option>
-                        <option value="17-20">17-20</option>
+                      <option value="">Pilih Tingkatan...</option>
+                        <option value="7-10">6-12 Tahun</option>
+                        <option value="12-15">12-15 Tahun</option>
+                        <option value="15-18">15-18 Tahun</option>
+                        <option value="18-21">18-21 Tahun</option>
+                        <option value="21+">21+ Tahun</option>
                     </select>
                 </div>
             </div>
@@ -149,7 +155,14 @@
                 </div>
                 <div class="mb-3" style="grid-area: w5-3" >
                     <label for="Lama Pertandingan" class="form-label">Lama Pertandingan</label>
-                    <input type="number" class="form-control input-kompetisi h-50 " id="Lama Pertandingan" name="lama_pertandingan" placeholder="Masukkan lama pertandingan..." style="border: 3px solid #FF8A35">
+                    {{-- <input type="number" class="form-control input-kompetisi h-50 " id="Lama Pertandingan" name="lama_pertandingan" placeholder="Masukkan lama pertandingan..." style="border: 3px solid #FF8A35"> --}}
+                    <select id="LamaPertandinganSelect" class="form-control input-kompetisi h-50 " type="text" placeholder="TWO" name="lama_pertandingan" style="border: 3px solid #FF8A35" required>
+                        <option value="1">30 Menit</option>
+                        <option value="1">60 Menit</option>
+                        <option value="2">90 Menit</option>
+                        <option value="2">120 Menit</option>
+                        <option value="3">120+ Menit</option>
+                    </select>
                 </div>
                 <div class="mb-3" style="grid-area: w5-4" >
                     <label for="Pukul" class="form-label">Pukul</label>

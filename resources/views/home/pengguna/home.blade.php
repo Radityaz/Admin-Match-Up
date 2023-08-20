@@ -3,8 +3,8 @@
 @section('content')
 <div class="container pt-3">
   <div class="input-group mb-3">
-    <input type="text" class="ps-2 b-primary-mu border-3  " placeholder="Cari..." aria-label="Cari">
-    <button class="btn bg-primary-mu rounded-0" type="button">Cari</button>
+    <input type="text" class="ps-2 b-primary-mu border-3 " placeholder="Cari..." aria-label="Cari">
+    <button class="btn bg-primary-mu rounded-0 scale-hover "  type="button">Cari</button>
   </div>  
     <table class="table">
       <thead class="bg-primary-mu " >
@@ -20,14 +20,14 @@
       <tbody >
         @foreach ($user as $user)
         <tr class="user-table" >
-          <th>1</th>
+          <th>{{ $loop->iteration }}</th>
           <td>{{$user->username}}</td>
           <td>{{$user->name}}</td>
           <td>{{$user->email}}</td>
           <td>100</td>
           <td>
-            <a href="/detailpengguna/{{$user->id}}" class="btn btn-success">Detail</a>
-            <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" >Blokir</a>
+            <a href="/detailpengguna/{{$user->id}}" class="btn btn-success scale-hover ">Detail</a>
+            <a href="" class="btn btn-danger scale-hover " data-bs-toggle="modal" data-bs-target="#exampleModal" >Blokir</a>
           </td>
         </tr>
         @endforeach
