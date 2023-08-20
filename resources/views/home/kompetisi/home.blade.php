@@ -47,10 +47,10 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <a class="dropdown-item" href="/view">View</a>
-                                      <a class="dropdown-item" href="/editkompetisi/{{$kompetisi->id}}/edit">Edit</a>
-                                      <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Delete</a>
+                                      <a class="dropdown-item  {{ $joinedKompetisiCount > 0 ? 'd-none' : 'd-block' }} " href="/editkompetisi/{{$kompetisi->id}}/edit">Edit</a>
+                                      <a class="dropdown-item {{ $joinedKompetisiCount == 0 || $DateNow > $kompetisi->tanggal_pertandingan ? 'd-block' : 'd-none'  }}    " data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Delete</a>
                                     </div>
-                                </div> 
+                                </div>  
                             </div>
                         <div class="h-75" >
                             <p class="m-0 p-0" style="font-size: 11px;">{{$kompetisi->penyelengara}}</p>  

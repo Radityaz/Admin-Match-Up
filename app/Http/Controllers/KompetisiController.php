@@ -11,13 +11,15 @@ class KompetisiController extends Controller
     public function index(){
         $kompetisi = Kompetisi::all();
         session()->flash('page', 'kompetisi');
+        $DateNow = date('Y-m-d');
+
         
         $joinedKompetisiCount = [];
         foreach ($kompetisi as $kompetisiItem) {
             $joinedKompetisiCounts[$kompetisiItem->id] = $kompetisiItem->joinedKompetisi->count();
         }
 
-        return view('home.kompetisi.home', compact(['kompetisi', 'joinedKompetisiCount']));
+        return view('home.kompetisi.home', compact(['kompetisi', 'joinedKompetisiCount','DateNow']));
     }
 
     public function tambah(){
