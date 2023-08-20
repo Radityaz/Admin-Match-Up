@@ -5,6 +5,7 @@ use App\Http\Controllers\MapController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KompetisiController;
+use App\Http\Controllers\StatistikController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,13 @@ use App\Http\Controllers\KompetisiController;
 //     return view('index.main');
 // });
 Route::middleware(['auth'])->group(function () {
-    Route::get('/statistik', function () {
-        return view('home.statistik', [
-            "page" => 'statistik'
-        ]);
-    });
+
+    // Route::get('/statistik', function () {
+    //     return view('home.statistik', [
+    //         "page" => 'statistik'
+    //     ]);
+    // });
+    Route::get('/statistik', [StatistikController::class, 'index']);
 
     Route::get('/pengguna', [UserController::class, 'index']);
     Route::delete('pengguna/{id}',[UserController::class, 'destroy']);
