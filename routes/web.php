@@ -90,3 +90,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 //         "title" => "peta"
 //     ]);
 // });
+
+Route::get('/view', function () {
+    return view('home.kompetisi.view');
+});

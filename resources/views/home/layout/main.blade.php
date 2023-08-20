@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/notification.css">
 </head>
 <body>
-    <div class="container-fluid" style="overflow: hidden">
+    <div class="container-fluid" style="overflow-x: hidden; overflow-y: auto">
         <div class="row vh-100 vw-100 ">
             <div class="col-2 bg-primary-mu p-0 h-100 d-flex flex-column justify-content-between">
                 <div class="d-flex flex-column" >
@@ -39,7 +39,6 @@
                 <a href="/logout" class="w-100 navbar-button ps-3 " >
                     <div class="logo-xsm d-inline-block " style="background-image: url(/css/img/logout.svg); background-size: contain;" ></div>
                     <p class="m-0 ms-3" style="{{ session('page') === 'peta' ? 'color: #FFBA35' : 'color: white' }}" >Logout</p>
-
                 </a>
             </div>
             <div class="col-10" style="overflow-y: auto">

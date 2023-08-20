@@ -40,7 +40,7 @@
 
     <div class="container-fluid vh-100" style="overflow-y: auto">
         <div class="d-flex align-items-center pt-3 pb-2 position-fixed bg-white w-75">
-            <a href="/pengguna" class="logo-sm " style="background-image: url(/css/img/back.svg); background-size: contain;" ></a>
+            <a href="/kompetisi" class="logo-sm " style="background-image: url(/css/img/back.svg); background-size: contain;" ></a>
             <h3 class="text-dark m-0 p-0 ps-3">Tambah Kompetisi</h3>
             <div></div>
         </div>
@@ -61,7 +61,7 @@
             <div class="w-50 m-0 p-2 bg-primary-mu"><h3>Title</h3></div>
             <div class="kompetisi-wrapper-1 w-50 p-2 shadow-still">
                 <div class="mb-3" style="grid-area: w1-0" >
-                    <label for="title" class="form-label">Penyelenggara</label>
+                    <label for="title" class="form-label">Penyelengara</label>
                     <input type="text" maxlength="30" class="form-control input-kompetisi" id="penyelengara" name="penyelengara" placeholder="Masukkan penyelengara kompetisi (maksimal 30)" style="border: 3px solid #FF8A35">
                 </div>
                 <div class="mb-3" style="grid-area: w1-1" >
