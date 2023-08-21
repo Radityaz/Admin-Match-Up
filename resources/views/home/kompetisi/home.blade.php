@@ -3,10 +3,10 @@
 @section('content')
 <div class="container pt-3">
     <div class="input-group-kompetisi mb-3">
-        <input type="text" class="ps-2 b-primary-mu border-3  " placeholder="Nama..." aria-label="Cari">
-        <input type="text" class="ps-2 b-primary-mu border-3  " placeholder="Lokasi..." aria-label="Cari">
-        <input type="text" class="ps-2 b-primary-mu border-3  " placeholder="Olahraga..." aria-label="Cari">
-        <button class="btn bg-primary-mu rounded-0 scale-hover " type="button">Cari</button>
+        <input type="text" class="ps-2 b-primary-mu border-3 radius-8 " placeholder="Nama..." aria-label="Cari">
+        <input type="text" class="ps-2 b-primary-mu border-3 radius-8 " placeholder="Lokasi..." aria-label="Cari">
+        <input type="text" class="ps-2 b-primary-mu border-3 radius-8 " placeholder="Olahraga..." aria-label="Cari">
+        <button class="btn bg-primary-mu  scale-hover radius-8" type="button">Cari</button>
     </div>
     <div class="container wrapper m-0 p-2 pb-3">
     @foreach ($kompetisi as $kompetisi)

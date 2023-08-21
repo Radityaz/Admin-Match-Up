@@ -51,7 +51,7 @@ function mapsview() {
     var value = input.value.replace(/\D/g, '');
 
     // Memisahkan nilai menjadi setiap 3 digit dengan titik
-    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
     // Menampilkan nilai yang sudah diformat kembali di input
     input.value = value;

@@ -25,17 +25,17 @@
                 @csrf
                 <div class="box">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="w-100 h-75 ps-1" style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Email..." required>
+                    <input type="email" id="email" name="email" class="w-100 h-75 ps-1 radius-8" style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Email..." required>
                 </div>  
                 <div class="box">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="w-100 h-75 ps-1" style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Password..." required>
+                    <input type="password" id="password" name="password" class="w-100 h-75 ps-1 radius-8"  style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Password..." required>
                 </div> 
                 <div class="box">
                     <label for="code">Kode</label>
-                    <input type="kode" id="code" name="kode" class="w-100 h-75 ps-1" style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Kode..." required>
+                    <input type="kode" id="code" name="kode" class="w-100 h-75 ps-1 radius-8" style="border: 3px solid #FF8A35" type="text" placeholder="Masukkan Kode..." required>
                 </div>
-                <button class="bg-primary-mu border-0 bold fs-5 text-uppercase" type="submit" name="submit">MASUK</button>
+                <button class="bg-primary-mu border-0 bold fs-5 text-uppercase radius-8 " type="submit" name="submit">MASUK</button>
             </form>
         </div>
     </div>

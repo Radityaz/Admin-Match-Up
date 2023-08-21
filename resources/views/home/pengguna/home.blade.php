@@ -3,8 +3,8 @@
 @section('content')
 <div class="container pt-3">
   <div class="input-group mb-3">
-    <input type="text" class="ps-2 b-primary-mu border-3 " placeholder="Cari..." aria-label="Cari">
-    <button class="btn bg-primary-mu rounded-0 scale-hover " type="button">Cari</button>
+    <input type="text" class="ps-2 b-primary-mu border-3 radius-8" placeholder="Cari..." aria-label="Cari">
+    <button class="btn bg-primary-mu scale-hover radius-8" type="button">Cari</button>
   </div>
   <table class="table">
     <thead class="bg-primary-mu">
