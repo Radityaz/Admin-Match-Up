@@ -1,10 +1,15 @@
 @extends('home.layout.main')
 
 @section('content')
+
+<div class="info-box">
+  <h2>Halo, {{Auth::user()->name}}</h2>
+  <p>Selamat datang di page admin</p>
+</div>
+
   <div class="container w-100 h-100 p-3">
-    <h3>Halo, [NAMA]</h3>
-    <p>Selamat datang di page admin</p>
-    <hr>
+    <h3></h3>
+    <p></p>
     <div id="statistik-wrapper" class="p-1" >
       <div class="box p-2 d-flex shadow-regular flex-column justify-content-between" style="border-radius: 8px" >
         <div class="d-flex align-items-center" >
@@ -23,7 +28,7 @@
           <h6 class="d-inline-block p-0 m-0 ms-2 fw-bold" >Jumlah Sparring</h6>
         </div>
         <div>
-          <h1 class="d-inline-block p-0 m-0" >0</h1>
+          <h1 class="d-inline-block p-0 m-0" >{{$sparring->count()}}</h1>
           <p class="d-inline-block p-0 m-0" >akun</p>
         </div>
       </div>
@@ -34,7 +39,7 @@
           <h6 class="d-inline-block p-0 m-0 ms-2 fw-bold" >Jumlah Mabar</h6>
         </div>
         <div>
-          <h1 class="d-inline-block p-0 m-0" >0</h1>
+          <h1 class="d-inline-block p-0 m-0" >{{$mabar->count()}}</h1>
           <p class="d-inline-block p-0 m-0" >akun</p>
         </div>
       </div>
@@ -45,7 +50,7 @@
           <h6 class="d-inline-block p-0 m-0 ms-2 fw-bold" >Jumlah Tim</h6>
         </div>
         <div>
-          <h1 class="d-inline-block p-0 m-0" >0</h1>
+          <h1 class="d-inline-block p-0 m-0" >{{$tim->count()}}</h1>
           <p class="d-inline-block p-0 m-0" >akun</p>
         </div>
       </div>
@@ -93,5 +98,6 @@
       </div>
     </div>
   </div>
+  
 
 @endsection
