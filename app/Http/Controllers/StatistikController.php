@@ -10,6 +10,7 @@ class StatistikController extends Controller
     public function index(){
         $user = DB::table('users')->get();
         session()->flash('page', 'statistik');
+        // dd($user);
         return view('home.statistik.home', compact(['user']));
     }
 }

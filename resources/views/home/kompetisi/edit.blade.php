@@ -2,36 +2,25 @@
 
 @section('content')
 
-<div class="modal modal-custom" id="MapsInput" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content modal-content-maps" >
+<div class="modal" id="exampleModal" tabindex="-1">
+    <div class="modal-dialog">
+    <div class="modal-content" style="width: 32vw" >
         <div class="modal-header bg-primary-mu">
-        <div class="blank logo-sm rounded-circle d-inline-block"></div>
         <h5 class="ps-2 modal-title ">
-            Masukkan Peta
+            Konfirmasi Hapus Kompetisi
         </h5>
         <button type="button" class="btn-close btn-close-white"data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <input class="w-100 ps-3" type="text" id="searchinput" onkeyup="searchLocation()" placeholder="Masukkan Nama Lokasi" style="height: 10%" type="text">
-            <div id="table_data" class="w-100 maps-wrapper">
-            <button class="maps-box p-3 b-0" data-filter="markas" onclick="mapsList(0)" data-bs-dismiss="modal">
-                <h6 class="fw-bold">Markas</h6>
-                <p class="m-0" >Detail</p>
-            </button>
-            <button class="maps-box p-3 b-0" data-filter="berlian" onclick="mapsList(1)" data-bs-dismiss="modal">
-                <h6 class="fw-bold">Berlian</h6>
-                <p class="m-0" >Detail</p>
-            </button>
-            <button class="maps-box p-3 b-0" data-filter="lapangan" onclick="mapsList(2)" data-bs-dismiss="modal">
-                <h6 class="fw-bold">Lapangan Besito</h6>
-                <p class="m-0" >Detail</p>
-            </button>
-            </div>
+        <p  >Anda yakin ingin menghapus Kompetisi ini?</p>
         </div>
-        
         <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        {{-- <form class="content1" action="/pengguna/{{$user->id}}" method="POST"> --}}
+            @csrf
+            @method('delete')
+            <button type="submit" class="btn btn-danger">Blokir</button>
+        </form>
         </div>
     </div>
     </div>
@@ -39,8 +28,8 @@
 
     <div class="container-fluid vh-100" style="overflow-y: auto">
         <div class="d-flex align-items-center pt-3 pb-2 position-fixed bg-white w-75">
-            <a href="/pengguna" class="logo-sm " style="background-image: url(/css/img/back.svg); background-size: contain;" ></a>
-            <h3 class="text-dark m-0 p-0 ps-3">Edit Kompetisi {{ $kompetisi->title }}</h3>
+            <a href="/kompetisi" class="logo-xsm scale-hover" style="background-image: url(/css/img/back.svg); background-size: contain;" ></a>
+            <h4 class="text-dark m-0 p-0 ps-3">Edit Kompetisi {{ $kompetisi->title }}</h3>
             <div></div>
         </div>
         <form action="/editkompetisi/{{$kompetisi->id}}" method="post" enctype="multipart/form-data" >
@@ -52,7 +41,7 @@
                     <img class="img-preview rounded-circle" src="{{asset('storage/'. $kompetisi->image)}}" style="height: 150px; width: 150px; object-fit:cover; object-position: center; position: relative"  alt="">
                 </div>
                 <div class="edit-image ms-2 p-0 m-0">
-                    <label for="image" class="rounded-circle blank" style="width: 35px; height: 35px"></label>
+                    <label for="image" class="rounded-circle scale-hover " style="width: 35px; height: 35px ; background-image: url(/css/img/add-image.jpg); background-size: contain "></label>
                     <input oninput="InputChange()"  style="display: none" type="file" id="image" name="image" onchange="previewImage()" required>
                 </div>
             </div>
@@ -60,13 +49,17 @@
         <section class="d-flex flex-column align-items-center py-3 mt-5 "  >
             <div class="w-50 m-0 p-2 bg-primary-mu"><h3>Title</h3></div>
             <div class="kompetisi-wrapper-1 w-50 p-2 shadow-still">
+                <div class="mb-3" style="grid-area: w1-0" >
+                    <label for="title" class="form-label">Penyelenggara</label>
+                    <input type="text" class="form-control input-kompetisi" id="title" name="penyelengara" value="{{$kompetisi->penyelengara}}" placeholder="Masukkan title kompetisi..." style="border: 3px solid #FF8A35"  >
+                </div>
                 <div class="mb-3" style="grid-area: w1-1" >
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control input-kompetisi" id="title" name="title" value="{{$kompetisi->title}}" placeholder="Masukkan title kompetisi..." style="border: 3px solid #FF8A35" readonly >
+                    <input type="text" class="form-control input-kompetisi" id="title" name="title" value="{{$kompetisi->title}}" placeholder="Masukkan title kompetisi..." style="border: 3px solid #FF8A35"  >
                 </div>
                 <div class="mb-3 " style="grid-area: w1-2">
                     <label for="olahraga" class="form-label">Olahraga</label>
-                    <select type="text" class="form-select input-kompetisi" id="olahraga" name="olahraga" placeholder="Masukkan cabang olahraga..." style="border: 3px solid #FF8A35" disabled>
+                    <select type="text" class="form-select input-kompetisi" id="olahraga" name="olahraga" placeholder="Masukkan cabang olahraga..." style="border: 3px solid #FF8A35" >
                         <option value="{{$kompetisi->olahraga}}" >{{$kompetisi->olahraga}}</option>
                         <option value="Sepak Bola">Sepak Bola</option>
                         <option value="Futsal">Futsal</option>
@@ -103,13 +96,11 @@
             <div class="kompetisi-wrapper-3 w-50 p-2 shadow-still">
                 <div class="mb-3" >
                     <label for="lokasi" class="form-label">Lokasi Kompetisi</label>
-                    <div class="w-100" style="display: grid; grid-template-columns: 3fr 1fr; gap: 15px;">
+                    <div class="w-100" style="display: grid; grid-template-columns: 1fr; gap: 15px;">
                         <input type="text" class="form-control input-kompetisi h-100" id="lokasi" name="lokasi" value="{{$kompetisi->lokasi}}" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35">
-                        <a data-bs-toggle="modal" data-bs-target="#MapsInput" class="btn bg-primary-mu h-100">Tambah</a>
                     </div>
                 </div>
-                <p class="d-flex align-items-center m-0" >Detail Lokasi</p>
-                <iframe src="" class="blank w-100 h-100" frameborder="0"></iframe>
+                <iframe src="{{ $kompetisi->embed_lokasi }}" class="blank w-100 h-100" frameborder="0"></iframe>
             </div>
         </section>
         <section class="d-flex flex-column align-items-center py-3 mt-3"  >
@@ -130,7 +121,7 @@
             <div class="kompetisi-wrapper-5 w-50 p-2 shadow-still">
                 <div class="mb-3" style="grid-area: w5-1" >
                     <label for="date" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control input-kompetisi h-50 " id="date" name="tanggal_pertandingan" value="{{$kompetisi->tanggal_pertandingan}}" placeholder="Masukkan jumlah slot..." style="border: 3px solid #FF8A35" readonly>
+                    <input type="date" class="form-control input-kompetisi h-50 " id="datepick" name="tanggal_pertandingan" value="{{$kompetisi->tanggal_pertandingan}}" placeholder="Masukkan jumlah slot..." style="border: 3px solid #FF8A35" >
                 </div>
                 <div class="mb-3" style="grid-area: w5-2" >
                     <label for="Harga Masuk" class="form-label">Harga Masuk Tersedia</label>
@@ -142,7 +133,7 @@
                 </div>
                 <div class="mb-3" style="grid-area: w5-4" >
                     <label for="Pukul" class="form-label">Pukul</label>
-                    <input type="number" class="form-control input-kompetisi h-50 " id="Pukul" name="waktu_pertandingan" value="{{$kompetisi->waktu_pertandingan}}" placeholder="Masukkan jumlah slot..." style="border: 3px solid #FF8A35">
+                    <input type="time" class="form-control input-kompetisi h-50 " id="Pukul" name="waktu_pertandingan" value="{{$kompetisi->waktu_pertandingan}}" placeholder="Masukkan jumlah slot..." style="border: 3px solid #FF8A35">
                 </div>
                 <div class="mb-3" style="grid-area: w5-5" >
                     <label for="PlusInfo" class="form-label">Informasi Tambahan</label>
@@ -151,8 +142,9 @@
             </div>
             
         </section>
-        <section class="d-flex flex-column align-items-center py-3 mt-3"  >
-            <button class="btn bg-primary-mu" type="submit" name="submit" value="save">Submit</button>
+        <section class="d-flex align-items-center justify-content-center py-3 mt-3" style="gap: 15px" >
+            <button class="btn bg-primary-mu text-light scale-hover " type="submit" name="submit" value="save">Submit</button>
+            <button class="btn bg-danger text-light scale-hover" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit" name="submit" value="save">Delete</button>
         </section>
     </form>
     </div>

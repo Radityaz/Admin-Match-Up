@@ -7,30 +7,7 @@
         <input type="text" class="ps-2 b-primary-mu border-3  " placeholder="Lokasi..." aria-label="Cari">
         <input type="text" class="ps-2 b-primary-mu border-3  " placeholder="Olahraga..." aria-label="Cari">
         <button class="btn bg-primary-mu rounded-0 scale-hover " type="button">Cari</button>
-    </div> 
-    <div class="modal" id="exampleModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content" style="width: 32vw" >
-            <div class="modal-header bg-primary-mu">
-              <h5 class="ps-2 modal-title ">
-                Konfirmasi Hapus Kompetisi
-              </h5>
-              <button type="button" class="btn-close btn-close-white"data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p  >Anda yakin ingin menghapus Kompetisi ini?</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              {{-- <form class="content1" action="/pengguna/{{$user->id}}" method="POST"> --}}
-                  @csrf
-                  @method('delete')
-                <button type="submit" class="btn btn-danger">Hapus</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
     <div class="container wrapper m-0 p-2 pb-3">
     @foreach ($kompetisi as $kompetisi)
         <div class="wrapper-box-new shadow-regular p-2">
@@ -48,7 +25,6 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <a class="dropdown-item" href="/view">View</a>
                                       <a class="dropdown-item  {{ $joinedKompetisiCount > 0 ? 'd-none' : 'd-block' }} " href="/editkompetisi/{{$kompetisi->id}}/edit">Edit</a>
-                                      <a class="dropdown-item {{ $joinedKompetisiCount == 0 || $DateNow > $kompetisi->tanggal_pertandingan ? 'd-block' : 'd-none'  }}    " data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Delete</a>
                                     </div>
                                 </div>  
                             </div>

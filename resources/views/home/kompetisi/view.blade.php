@@ -9,7 +9,7 @@
         <div class="container bg-ms-primary ">
         <a href="/kompetisi" class="logo-xsm " style="background-image: url(/css/img/back.svg); background-size: contain;" ></a>
         <span  >Detail Kompetisi</span>
-        <button data-bs-toggle="modal" data-bs-target="#report" class="report" style="background: url(/css/img/report.png); background-size: contain;" style="height: 28px;" ></button>
+        <button data-bs-toggle="modal" data-bs-target="#report" class="report" style="background-size: contain;" style="height: 28px;" >Blokir</button>
         </div>
     </nav>
     <div class="container-fluid vh-100" style="overflow-y: scroll">
