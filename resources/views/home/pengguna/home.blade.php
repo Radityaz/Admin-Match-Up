@@ -3,8 +3,11 @@
 @section('content')
 <div class="container pt-3">
   <div class="input-group mb-3">
-    <input type="text" class="ps-2 b-primary-mu border-3 radius-8" placeholder="Cari..." aria-label="Cari">
-    <button class="btn bg-primary-mu scale-hover radius-8" type="button">Cari</button>
+    <form class="w-100" action="/pengguna/search" method="get">
+      @csrf
+    <input type="text" name="search" class="ps-2 b-primary-mu border-3 radius-8" placeholder="Cari..." aria-label="Cari">
+    <button class="btn bg-primary-mu scale-hover radius-8" type="submit">Cari</button>
+    </form>
   </div>
   <table class="table">
     <thead class="bg-primary-mu">
