@@ -15,7 +15,7 @@
             <div class="col-2 bg-primary-mu p-0 h-100 d-flex flex-column justify-content-between">
                 <div class="d-flex flex-column" >
                     <div style="height: 35vh" class="p-3 mb-3 d-flex flex-column justify-content-evenly align-items-center" >
-                        <img src="{{ asset('storage/'. Auth::user()->image) }}">
+                        <img class="shadow-down admin-logo rounded-circle" src="{{ asset('storage/'. Auth::user()->image) }}">
                         <h5 class="m-0 bold" >{{Auth::user()->username}}</h5>
                         <p style="font-size: 12px; opacity: 75%"  class="m-0" >{{Auth::user()->email}}</p>
                     </div>
