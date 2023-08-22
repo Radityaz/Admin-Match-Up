@@ -10,6 +10,9 @@
     </div>
     <div class="container wrapper m-0 p-2 pb-3">
     @foreach ($kompetisi as $kompetisi)
+    @php
+    $joinedKompetisiCount = $kompetisi->joinedKompetisi->count();
+    @endphp
         <div class="wrapper-box-new shadow-regular p-2">
             <div class="headerbox p-0 m-0">
                 <div class="row w-100 h-100 p-0 m-0">
@@ -55,9 +58,7 @@
                 <hr class="my-1 p-0" >
                 <div class="d-felx justify-content-between" >
                     <span class="font-primary-mu" style="font-family: opensans-bold" >Member</span>
-                    @php
-                        $joinedKompetisiCount = $kompetisi->joinedKompetisi->count();
-                    @endphp
+
                     <span class="font-primary-mu" style="font-family: opensans-bold" >{{$joinedKompetisiCount}}/{{$kompetisi->max_member}}</span>
                 </div>
             </div>

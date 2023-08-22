@@ -6,7 +6,7 @@
 </div>
 
 @section('content')
-<div class="container pt-3">
+<div class="container pt-3 vh-100">
     <div class="input-group mb-3">
       <input type="text" class="ps-2 b-primary-mu border-3  radius-8" placeholder="Cari..." aria-label="Cari">
       <button class="btn bg-primary-mu scale-hover radius-8" >Cari</button>
@@ -18,7 +18,7 @@
             <th width="5%" scope="col">ID</th>
             <th width="20%" scope="col">Nama</th>
             <th width="35%" scope="col">Detail</th>
-            <th width="25%" scope="col">Harga</th>
+            <th width="25%" scope="col" class="text-center" >Harga</th>
             <th width="20%" scope="col">Aksi</th>
           </tr>
         </thead>
@@ -29,7 +29,7 @@
             <th>{{ $loop->iteration }}</th>
             <td>{{ $map->title_lokasi }}</td>
             <td>{{ $map->detail_lokasi }}</td>
-            <td>{{ $map->harga_sewa_lokasi }}</td>
+            <td class="text-center" >{{ $map->harga_sewa_lokasi }}</td>
             <td>
               <a href="/editpeta/{{$map->id}}/edit" class="btn btn-success scale-hover ">Edit</a>
               {{-- <form class="d-inline-block" action="/peta/detaildestroy/{{$map->id}}" method="get">
