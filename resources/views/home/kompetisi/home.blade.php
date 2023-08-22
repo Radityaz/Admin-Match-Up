@@ -10,9 +10,9 @@
     </div>
     <div class="container wrapper m-0 p-2 pb-3">
     @foreach ($kompetisi as $kompetisi)
-    @php
+    {{-- @php
     $joinedKompetisiCount = $kompetisi->joinedKompetisi->count();
-    @endphp
+    @endphp --}}
         <div class="wrapper-box-new shadow-regular p-2">
             <div class="headerbox p-0 m-0">
                 <div class="row w-100 h-100 p-0 m-0">
@@ -27,7 +27,7 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <a class="dropdown-item" href="/kompetisi/{{$kompetisi->id}}/view">View</a>
-                                      <a class="dropdown-item  {{ $joinedKompetisiCount > 0 ? 'd-none' : 'd-block' }} " href="/editkompetisi/{{$kompetisi->id}}/edit">Edit</a>
+                                      {{-- <a class="dropdown-item"  href="/editkompetisi/{{$kompetisi->id}}/edit">Edit</a> --}}
                                     </div>
                                 </div>  
                             </div>
@@ -59,7 +59,7 @@
                 <div class="d-felx justify-content-between" >
                     <span class="font-primary-mu" style="font-family: opensans-bold" >Member</span>
 
-                    <span class="font-primary-mu" style="font-family: opensans-bold" >{{$joinedKompetisiCount}}/{{$kompetisi->max_member}}</span>
+                    <span class="font-primary-mu" style="font-family: opensans-bold" >{{$kompetisi->joinedKompetisi->count()}}/{{$kompetisi->max_member}}</span>
                 </div>
             </div>
         </div>
