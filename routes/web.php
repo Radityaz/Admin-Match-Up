@@ -32,6 +32,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/statistik', [StatistikController::class, 'index']);
 
     Route::get('/pengguna', [UserController::class, 'index']);
+    Route::get('/pengguna/search', [UserController::class, 'search']);
     Route::delete('pengguna/{id}',[UserController::class, 'destroy']);
 
     // Route::get('/pengguna', function () {

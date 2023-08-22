@@ -39,5 +39,25 @@ class UserController extends Controller
         return redirect('/pengguna');
     }
 
+    public function search(Request $request){
+
+
+        $searchtitle = $request->input('search');
+        // $usernamesearch = $request->input('search');
+        $user = User::query();
+
+        if ($searchtitle) {
+            $user->where('name', 'like', '%'.$searchtitle.'%');
+        }
+
+        // if ($usernamesearch) {
+        //     $user->where('username', 'like', '%'.$usernamesearch.'%');
+        // }
+
+        $user = $user->get();
+
+        return view('home.pengguna.home', compact(['user']));
+    }
+
     
 }
