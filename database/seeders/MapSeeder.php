@@ -19,14 +19,14 @@ class MapSeeder extends Seeder
             [
                 'title_lokasi' => 'Markas Sport Center',
                 'detail_lokasi' => 'Jl. Jend. Sudirman No.184, Rendeng, Kec. Kota Kudus, Kabupaten Kudus, Jawa Tengah 59311',
-                'harga_sewa_lokasi' => '900000',
+                'harga_sewa_lokasi' => '90.000',
                 'embed_google_map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7164918587832!2d110.85877227331912!3d-6.804302266546279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70c525fd6001b1%3A0xe28fff5d78f8ce5f!2sMarkass%20Sport%20Center!5e0!3m2!1sid!2sid!4v1692256732496!5m2!1sid!2sid',
             ],
 
             [
                 'title_lokasi' => 'Berlian Sport Center',
                 'detail_lokasi' => 'Jl. Lkr. Utara Kudus, Ledok, Karangmalang, Kec. Gebog, Kabupaten Kudus, Jawa Tengah 59333',
-                'harga_sewa_lokasi' => '900000',
+                'harga_sewa_lokasi' => '90.000',
                 'embed_google_map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.9331027761045!2d110.82925937331869!3d-6.777996766280884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70db3f65bcd8ef%3A0xf406838f209d8561!2sBerlian%20Sport%20Centre!5e0!3m2!1sid!2sid!4v1692257798846!5m2!1sid!2sid',
             ],
 

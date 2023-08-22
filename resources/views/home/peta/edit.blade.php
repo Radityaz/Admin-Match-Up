@@ -24,7 +24,7 @@
               </div>
               <div class="mb-3">
                 <label for="Harga" class="form-label">Harga Sewa Lokasi</label>
-                <input type="text" class="form-control" id="Harga" name="harga_sewa_lokasi" placeholder="Masukkan Harga Sewa..." value="{{ $map->harga_sewwa_lokasi }}" style="border: 3px solid #FF8A35" oninput="formatCurrency(this)" required>
+                <input type="text" class="form-control" id="Harga" name="harga_sewa_lokasi" placeholder="Masukkan Harga Sewa..." value="{{ $map->harga_sewa_lokasi }}" style="border: 3px solid #FF8A35" oninput="formatCurrency(this)" required>
               </div>
               <div class="mb-3">
                 <label for="embed" class="form-label">Embed google Maps</label>
