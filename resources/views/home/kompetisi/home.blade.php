@@ -23,8 +23,8 @@
                                         <img height="18px" src="/css/img/three-dots-vertical.svg" alt="">
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                      <a class="dropdown-item" href="/view">View</a>
-                                      <a class="dropdown-item  {{ $joinedKompetisiCount > 0 ? 'd-none' : 'd-block' }} " href="/editkompetisi/{{$kompetisi->id}}/edit">Edit</a>
+                                      <a class="dropdown-item" href="/kompetisi/{{$kompetisi->id}}/view">View</a>
+                                      <a class="dropdown-item  {{ $kompetisi->count() > 0 ? 'd-none' : 'd-block' }} " href="/editkompetisi/{{$kompetisi->id}}/edit">Edit</a>
                                     </div>
                                 </div>  
                             </div>

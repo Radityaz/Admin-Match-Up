@@ -84,7 +84,14 @@ class KompetisiController extends Controller
         // dd($id);
         $kompetisi = DB::table('kompetisi')->find($id);
         session()->flash('page', 'kompetisi');
-        return view('home.kompetisi.edit', compact(['kompetisi']));
+        return view('home.kompetisi.home', compact(['kompetisi']));
+    }
+
+    public function view($id){
+
+        $kompetisi = DB::table('kompetisi')->find($id);
+        return view('home.kompetisi.view', compact(['kompetisi']));
+
     }
 
     public function update($id, Request $request ){

@@ -74,9 +74,9 @@
                         <option value="" >Pilih Olahraga...</option>
                         <option value="Sepak Bola">Sepak Bola</option>
                         <option value="Futsal">Futsal</option>
+                        <option value="Mini Soccer">Mini Soccer</option>
                         <option value="Ping Pong">Ping Pong</option>
                         <option value="Badminton">Badminton</option>
-                        <option value="Renang">Renang</option>
                     </select>
                 </div>
                 <div class="mb-3" style="grid-area: w1-3">

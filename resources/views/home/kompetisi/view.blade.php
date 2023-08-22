@@ -1,4 +1,4 @@
-@extends('home.layout.main')
+ @extends('home.layout.main')
 
 <head>
     <link rel="stylesheet" href="/css/kompetisideatil.css">
@@ -16,20 +16,20 @@
         <div class="row mt-5 h-100 ">
             <div class="col-6">
                 <div class="title">
-                    <img class="userlogo rounded-circle" src="" >
+                    <img class="userlogo rounded-circle" src="{{asset ('storage/' . $kompetisi->image)}}" >
                     <div class="ms-0 ms-sm-4 mt-3 mt-sm-0 " >
-                        <h1 class="fw-bold" >TITLE</h1>
+                        <h1 class="fw-bold" >{{$kompetisi->title}}</h1>
                         <div style="display: flex; align-items: center;" class="title-content">
                             <div class="sportlogo me-2"></div>
-                            <span class="me-2">OLAHRAGA</span>
-                            <span>|LOKASI</span>
+                            <span class="me-2">{{$kompetisi->olahraga}}</span>
+                            <span>|{{$kompetisi->lokasi}}</span>
                         </div>
                     </div>
                 </div>
                 <hr>
                 <div class="description">
                     <h5 class="fw-bold" >Deskripsi Kompetisi</h5>
-                    <span class="des" style="font-size: 12px" >DESKRIPSI</span>
+                    <span class="des" style="font-size: 12px" >{{$kompetisi->deskripsi}}</span>
                 </div>
                 <hr>
                 <div class="price">
@@ -38,25 +38,25 @@
                         <div class="price-box">
                             <img src="/css/img/achievement.png" class="trophy mb-lg-0 mb-2">
                             <h5 class="d-inline-block ms-0 ms-lg-3 fw-bold" >Juara 1</h5>
-                            <p class="mt-lg-2 mt-0" style="font-size: 12px" >JUARA PERTAMA</p>
+                            <p class="mt-lg-2 mt-0" style="font-size: 12px" >{{$kompetisi->juara_pertama}}</p>
                         </div>
                         <div class="price-box">
                             <img src="/css/img/achievement.png" class="trophy mb-lg-0 mb-2">
                             <h5 class="d-inline-block ms-0 ms-lg-3 fw-bold" >Juara 2</h5>
-                            <p class="mt-lg-2 mt-0" style="font-size: 12px" >JUARA KEDUA</p>
+                            <p class="mt-lg-2 mt-0" style="font-size: 12px" >{{$kompetisi->juara_kedua}}</p>
                         </div>
                         <div class="price-box">
                             <img src="/css/img/achievement.png" class="trophy mb-lg-0 mb-2">
                             <h5 class="d-inline-block ms-0 ms-lg-3 fw-bold" >Juara 1</h5>
-                            <p class="mt-lg-2 mt-0" style="font-size: 12px" >JUARA KEDUA</p>
+                            <p class="mt-lg-2 mt-0" style="font-size: 12px" >{{$kompetisi->juara_ketiga}}</p>
                         </div>
                     </div>
                 </div>
                 <hr>
                 <div class="maps pb-lg-5 pb-0">
-                    <h5  class="fw-bold"  >Lokasi Sparring</h5>
-                    <p style="font-size: 12px" class="des" id="detaillokasi" >LOKASI</p>
-                    <iframe class="blank" id="MapDisplay" ></iframe>
+                    <h5  class="fw-bold"  >Lokasi Kompetisi</h5>
+                    <p style="font-size: 12px" class="des" id="detaillokasi" >{{$kompetisi->detail_lokasi}}</p>
+                    <iframe class="blank" id="MapDisplay" src="{{$kompetisi->embed_lokasi}}" ></iframe>
                 </div>
                 <div class="d-block d-lg-none extra-description">
                     <h5>Deskripsi Tambahan</h5>
@@ -77,7 +77,7 @@
                 </div>
                     <div class="access-phone d-flex d-lg-none">
                         <h4>Biaya Pendaftaran</h4>
-                        <h1>Rp. HARGA TIKET<span class="text-muted" >/tim</span> </h1>
+                        <h1>Rp. HARGA TIKET<span class="text-muted" >/orang</span> </h1>
                         <div class="access-badge d-flex justify-content-center" >
                             <div class="two w-75">0 Tahun</div>
                         </div>
@@ -117,7 +117,7 @@
                             <td>
                                 
                             </td>
-                            <td style="font-size: 13px;"  >LOKASI</td>
+                            <td style="font-size: 13px;"  >{{$kompetisi->detail_lokasi}}</td>
                         </tr>
                             </table>
                             
@@ -127,8 +127,8 @@
                 <div class="box1 d-none d-lg-flex ">
                     <div class="access w-100 d-flex justify-content-center border-0">
                         <h5>Biaya Pendaftaran</h5>
-                        <h1 class="w-100 text-center" >Rp. HARGA<span style="display: inline-block" class="text-muted" > /tim</span> </h1>
-                        <div class="two">TiNGKATAN Tahun</div>
+                        <h1 class="w-100 text-center" >Rp. {{$kompetisi->harga_tiket}}<span style="display: inline-block" class="text-muted" > /tim</span> </h1>
+                        <div class="two">{{$kompetisi->tingkatan}}</div>
                     </div>
                     <div class="box-content ">
                         <table>
@@ -142,7 +142,7 @@
                                 <td width="10%" >
                                     
                                 </td>
-                                <td width="90%" style="font-size: 13px;">HARGA</td>
+                                <td width="90%" style="font-size: 13px;">{{$kompetisi->tanggal_pertandingan}}</td>
                             </tr>
                             <tr>
                                 <td  width="10%"  >
@@ -154,17 +154,17 @@
                                 <td width="10%">
                                     
                                 </td>
-                                <td width="90%" style="font-size: 13px;">LAMA jam</td>
+                                <td width="90%" style="font-size: 13px;">{{$kompetisi->lama_pertandingan}}</td>
                             </tr>
                             <tr>
                                 <td width="10%">
                                     <div class="icon mx-auto" style="background: url(/css/img/target.png); background-size: contain;"></div>
                                 </td>
-                                <td width="90%" style="font-family: opensans-bold;">Lokasi Mabar</td>
+                                <td width="90%" style="font-family: opensans-bold;">Lokasi Kompetisi</td>
                             </tr>
                             <tr>
                                 <td width="10%"></td>
-                                <td width="90%" style="font-size: 13px;" id="locationTarget"  >LOKASI </td>
+                                <td width="90%" style="font-size: 13px;" id="locationTarget"  >{{$kompetisi->penyelengara}}</td>
                             </tr>
                         </table>
                         <button class="ambil" style="visibility: hidden" >Kompetisi Penuh</button>
@@ -180,18 +180,7 @@
                     
                     @endif --}}
                 </div>
-                <div class="box2 d-none d-lg-block">
-                    <h5>Member</h5>
-                    <div class="mabar-member p-1" >
-                        <div class="member">
-                            <img style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#UserProfile" class="member-logo rounded-circle " src="" >
-                            <div class="ms-2">
-                                <h6 class="m-0" data-bs-toggle="modal" style="cursor: pointer" data-bs-target=""> TITLE </h6>
-                                <p class="m-0" >Participants</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
