@@ -27,7 +27,7 @@
 </div>
 
     <div class="container-fluid vh-100" style="overflow-y: auto">
-        <div class="d-flex align-items-center pt-3 pb-2 position-fixed bg-white w-75">
+        <div class="d-flex align-items-center pt-3 pb-2 position-fixed bg-white w-75" style="z-index: 100000;">
             <a href="/kompetisi" class="logo-xsm scale-hover" style="background-image: url(/css/img/back.svg); background-size: contain;" ></a>
             <h4 class="text-dark m-0 p-0 ps-3">Edit Kompetisi {{ $kompetisi->title }}</h3>
             <div></div>
@@ -97,8 +97,9 @@
                 <div class="mb-3" >
                     <label for="lokasi" class="form-label">Lokasi Kompetisi</label>
                     <div class="w-100" style="display: grid; grid-template-columns: 1fr; gap: 15px;">
-                        <input type="text" class="form-control input-kompetisi h-100" id="lokasi" name="lokasi" value="{{$kompetisi->lokasi}}" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35">
+                        <input type="text" class="form-control input-kompetisi h-100" id="lokasi" name="lokasi" value="{{$kompetisi->lokasi}}" placeholder="Masukkan deskripsi juara..." style="border: 3px solid #FF8A35" readonly >
                     </div>
+                    <input class="d-none" type="detail_lokasi" value="{{ $kompetisi->detail_lokasi }}" >
                 </div>
                 <iframe src="{{ $kompetisi->embed_lokasi }}" class="blank w-100 h-100" frameborder="0"></iframe>
             </div>
