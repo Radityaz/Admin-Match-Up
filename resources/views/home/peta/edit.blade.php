@@ -30,12 +30,14 @@
                 <label for="embed" class="form-label">Embed google Maps</label>
                 <input type="text" class="form-control" id="embed" name="embed_google_map" value="{{$map->embed_google_map}}" placeholder="Masukkan Embed google Maps Lokasi..." style="border: 3px solid #FF8A35">
               </div>
-              <button type="submit" class="btn bg-primary-mu rounded-0">Submit</button>
+              <div class="w-100 d-flex justify-content-center " >
+                <button type="submit" class="btn bg-primary-mu w-75">Submit</button>
+              </div>
             </form>
-            <form action="/peta/{{$map->id}}" method="post">
+            <form action="/peta/{{$map->id}} " class="w-50 d-flex justify-content-center mt-3" method="post">
               @csrf
               @method('delete')
-              <button type="submit" class="btn btn-danger" style="color: white;" >Delete</button>
+              <button type="submit" class="btn btn-danger w-75" style="color: white;" >Delete</button>
           </form>
         </section>
     </div>

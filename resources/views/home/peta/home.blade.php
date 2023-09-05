@@ -35,9 +35,9 @@
               {{-- <form class="d-inline-block" action="/peta/detaildestroy/{{$map->id}}" method="get">
                 @csrf --}}
                 {{-- @method('delete') --}}
-                <button class="btn btn-danger scale-hover " data-bs-toggle="modal" data-bs-target="#exampleModal{{$map->id}}">
+                {{-- <button class="btn btn-danger scale-hover " data-bs-toggle="modal" data-bs-target="#exampleModal{{$map->id}}">
                     Hapus
-                </button>
+                </button> --}}
             {{-- </form>--}}
             </td>
           </tr>
@@ -72,7 +72,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary scale-hover "  data-bs-dismiss="modal">Batal</button>
-            {{-- <form action="/peta/{{$map->id}}" method="post"> --}}
+            <form action="/peta/{{$map->id}}" method="post">
               @csrf
               @method('delete')
               <button type="button" class="btn btn-danger scale-hover " type="submit" value="Delete">Hapus</button> 
