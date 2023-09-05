@@ -15,7 +15,7 @@
         </div>
         <div>
           <h1 class="d-inline-block p-0 m-0" >{{ $user->count() }}</h1>
-          <p class="d-inline-block p-0 m-0" >akun</p>
+          <p class="d-inline-block p-0 m-0" >Akun</p>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
         </div>
         <div>
           <h1 class="d-inline-block p-0 m-0" >{{$sparring->count()}}</h1>
-          <p class="d-inline-block p-0 m-0" > Event</p>
+          <p class="d-inline-block p-0 m-0" > Event Sparring</p>
         </div>
       </div>
 
@@ -35,7 +35,7 @@
         </div>
         <div>
           <h1 class="d-inline-block p-0 m-0" >{{$mabar->count()}}</h1>
-          <p class="d-inline-block p-0 m-0" >akun</p>
+          <p class="d-inline-block p-0 m-0" >Event Mabar</p>
         </div>
       </div>
 
@@ -45,7 +45,7 @@
         </div>
         <div>
           <h1 class="d-inline-block p-0 m-0" >{{$tim->count()}}</h1>
-          <p class="d-inline-block p-0 m-0" >akun</p>
+          <p class="d-inline-block p-0 m-0" >Tim</p>
         </div>
       </div>
     </div>
