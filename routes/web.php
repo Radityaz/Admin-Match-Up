@@ -74,6 +74,7 @@ Route::middleware(['auth'])->group(function () {
     // });
     Route::get('/peta', [MapController::class, 'index']);
     Route::get('/editpeta/{id}/edit', [MapController::class, 'edit']);
+    Route::delete('/editpeta/{id}/destroy', [MapController::class, 'destroy']);
     Route::put('/editpeta/{id}', [MapController::class, 'update']);
     Route::get('/tambahpeta', [MapController::class, 'tambah']);
     Route::post('/tambahpeta/store', [MapController::class, 'store']);
