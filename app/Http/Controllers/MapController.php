@@ -65,7 +65,6 @@ class MapController extends Controller
     public function destroy($id){
         $map = Map::findOrFail($id);
         $map->delete();
-
         return redirect('/peta')->with('success', 'Peta berhasil dihapus.');
     }
 

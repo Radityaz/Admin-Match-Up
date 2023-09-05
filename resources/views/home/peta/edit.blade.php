@@ -31,8 +31,12 @@
                 <input type="text" class="form-control" id="embed" name="embed_google_map" value="{{$map->embed_google_map}}" placeholder="Masukkan Embed google Maps Lokasi..." style="border: 3px solid #FF8A35">
               </div>
               <button type="submit" class="btn bg-primary-mu rounded-0">Submit</button>
-              <button type="submit" class="btn btn-danger rounded-0">Delete</button>
             </form>
+            <form action="/peta/{{$map->id}}" method="post">
+              @csrf
+              @method('delete')
+              <button type="submit" class="btn btn-danger" style="color: white;" >Delete</button>
+          </form>
         </section>
     </div>
 @endsection
