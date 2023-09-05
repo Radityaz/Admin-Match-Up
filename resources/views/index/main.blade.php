@@ -22,6 +22,7 @@
                 <div class="div">
                     <h5>Selamat Datang</h5>
                 </div>
+                <div></div>
                 @csrf
                 <div class="box">
                     <label for="email">Email</label>
