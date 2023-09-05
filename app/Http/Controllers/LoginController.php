@@ -21,17 +21,17 @@ class LoginController extends Controller
         $request->validate([
             'email' => 'required',
             'password' => 'required',
-            'kode' => 'required',
+            // 'kode' => 'required',
         ],[
             'email.required' => 'Email wajib diisi',
             'password.required' => 'Password wajib diisi',
-            'kode.required' => 'Kode wajib diisi',
+            // 'kode.required' => 'Kode wajib diisi',
         ]);
 
         $infologin = [
             'email' => $request->email,
             'password' => $request->password,
-            'kode' => $request->kode,
+            // 'kode' => $request->kode,
         ];
 
         if (Auth::attempt($infologin)) {

@@ -30,13 +30,13 @@ class MapController extends Controller
     }
 
     public function index(){
-        $map = Map::all();
+        $map = Map::orderBy('created_at', 'desc')->get();
         session()->flash('page', 'peta');
         return view('home.peta.home', compact('map'));
     }
 
     public function tambah(){
-        $map = Map::all();
+        $map = Map::orderBy('created_at', 'desc')->get();
         session()->flash('page', 'peta');
         return view('home.peta.add', compact(['map']));
     }
